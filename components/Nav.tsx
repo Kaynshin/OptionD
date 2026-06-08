@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Wordmark from './Wordmark';
-import ThemeToggle from './ThemeToggle';
 import Button from './Button';
+import MobileMenu from './MobileMenu';
 
 type NavProps = {
   active: 'home' | 'site' | 'agent';
@@ -45,11 +45,16 @@ export default function Nav({ active, statusText, ctaLabel, ctaHref }: NavProps)
             <span className="pulse"></span>
             {statusText}
           </span>
-          <ThemeToggle />
           <Button href={ctaHref} variant="primary" arrow="→">
             {ctaLabel}
           </Button>
         </div>
+        <MobileMenu
+          active={active}
+          statusText={statusText}
+          ctaLabel={ctaLabel}
+          ctaHref={ctaHref}
+        />
       </div>
     </header>
   );

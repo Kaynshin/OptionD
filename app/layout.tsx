@@ -39,8 +39,6 @@ export const metadata: Metadata = {
   },
 };
 
-const antiFouc = `(function(){try{var t=localStorage.getItem('optiond-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
-
 export default function RootLayout({
   children,
 }: {
@@ -49,12 +47,9 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
+      data-theme="dark"
       className={`${GeistSans.variable} ${GeistMono.variable}`}
-      suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: antiFouc }} />
-      </head>
       <body>{children}</body>
     </html>
   );
