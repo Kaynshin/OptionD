@@ -50,10 +50,7 @@ export default function MentionsLegales() {
                 Email : <a href="mailto:david@optiond.fr">david@optiond.fr</a>
               </li>
               <li>
-                SIRET : <span className="todo">[à compléter]</span>
-              </li>
-              <li>
-                Adresse : <span className="todo">[à compléter]</span>
+                SIRET : 750 186 181 00038
               </li>
             </ul>
 

@@ -7,6 +7,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ### Added
 
 ### Changed
+- Mentions légales : SIRET renseigné (750 186 181 00038) ; la ligne « Adresse » est retirée (non publiée, choix de l'éditeur).
 
 ### Fixed
 
