@@ -4,8 +4,11 @@ import Wordmark from './Wordmark';
 import Button from './Button';
 import MobileMenu from './MobileMenu';
 
+export type NavActive = 'home' | 'site' | 'agent';
+
 type NavProps = {
-  active: 'home' | 'site' | 'agent';
+  /** Lien à mettre en surbrillance. Omis (ou non reconnu) → aucun lien actif (ex. /mentions-legales). */
+  active?: NavActive;
   /** Conservé pour compat. d'API (les pages le passent encore) — non rendu. */
   statusText?: ReactNode;
   ctaLabel: ReactNode;
@@ -25,18 +28,24 @@ export default function Nav({ active, ctaLabel, ctaHref }: NavProps) {
           </div>
         </Link>
         <nav className="nav-links" aria-label="Services">
-          <Link href="/" className={active === 'home' ? 'is-active' : undefined}>
+          <Link
+            href="/"
+            className={active === 'home' ? 'is-active' : undefined}
+            aria-current={active === 'home' ? 'page' : undefined}
+          >
             Accueil
           </Link>
           <Link
             href="/site-internet"
             className={active === 'site' ? 'is-active' : undefined}
+            aria-current={active === 'site' ? 'page' : undefined}
           >
             Site internet
           </Link>
           <Link
             href="/agent-ia"
             className={active === 'agent' ? 'is-active' : undefined}
+            aria-current={active === 'agent' ? 'page' : undefined}
           >
             Agent IA
           </Link>

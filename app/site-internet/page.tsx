@@ -220,7 +220,7 @@ export default function SiteInternetPage() {
               { label: 'Accueil', href: '/' },
               { label: 'Site internet', href: '/site-internet' },
               { label: 'Agent IA', href: '/agent-ia' },
-              { label: 'Mentions légales', href: '#' },
+              { label: 'Mentions légales', href: '/mentions-legales' },
             ],
           },
         ]}

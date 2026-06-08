@@ -3,14 +3,16 @@
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import Link from 'next/link';
+import type { NavActive } from './Nav';
 
 type MobileMenuProps = {
-  active: 'home' | 'site' | 'agent';
+  /** Omis (ou non reconnu) → aucun lien actif (ex. /mentions-legales). */
+  active?: NavActive;
   ctaLabel: ReactNode;
   ctaHref: string;
 };
 
-const LINKS: { href: string; label: string; key: MobileMenuProps['active'] }[] = [
+const LINKS: { href: string; label: string; key: NavActive }[] = [
   { href: '/', label: 'Accueil', key: 'home' },
   { href: '/site-internet', label: 'Site internet', key: 'site' },
   { href: '/agent-ia', label: 'Agent IA', key: 'agent' },

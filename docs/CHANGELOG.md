@@ -5,6 +5,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ## [Unreleased]
 
 ### Added
+- Page **Mentions légales** (`/mentions-legales`, server component) : éditeur, directeur de la publication, hébergeur (Vercel Inc.), propriété intellectuelle, données personnelles (RGPD : finalité, base légale, durée, droits, DPO), mesure d'audience/cookies (Vercel Analytics + Speed Insights, sans cookie publicitaire) et contact. Placeholders `[à compléter]` pour SIRET et adresse. Métadonnées (title/description/canonical/OpenGraph/Twitter), styles dédiés `.legal` dans `globals.css` (section ADDITIONS), ajout au `sitemap.ts` (priority 0.3). Nav sans lien actif sur cette page.
 - Fade-in des sections au scroll (`components/SectionReveal.tsx`) : `IntersectionObserver` vanilla sur les `section.band`, révélées une à une à l'entrée dans le viewport ; masquage CSS activé uniquement quand le JS tourne (classe `reveal-on` sur `<html>`, contenu visible sans JS / au SSR) ; ré-observation des sections à chaque navigation client (App Router, `usePathname`) ; le `.hero` (above-the-fold) reste visible immédiatement.
 - Bouton « retour en haut » (`components/BackToTop.tsx`) : fixé en bas à droite, apparaît après ~500px de scroll, remonte la page (smooth) ; accessible (`<button>` + `aria-label`, focus-visible magenta), style sobre via tokens CSS avec halo magenta léger au hover.
 - Les deux features respectent strictement `prefers-reduced-motion: reduce` : aucune animation (sections révélées d'emblée, scroll instantané, transitions désactivées). Aucune dépendance ajoutée (vanilla + CSS).
@@ -17,6 +18,9 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 - SEO : données structurées JSON-LD (`ProfessionalService` + founder, `WebPage`, `Service` ×2 avec `Offer`, `FAQPage` ×2), `sitemap.xml` (`app/sitemap.ts`), `robots.txt` (`app/robots.ts`), métadonnées par page (title/description/canonical/OpenGraph/Twitter) optimisées national FR, composant `JsonLd`. Recherche concurrence + mots-clés et stratégie dans `docs/seo/STRATEGY.md`.
 
 ### Changed
+- Footer de l'accueil nettoyé : colonne **Services** réduite à « Site internet » et « Agent IA » (retrait de « Diagnostic offert » et « Formules IA », ancres profondes inter-pages) ; colonne **Atelier** conservée mais réduite à « Mentions légales » (retrait des ancres profondes « Approche » et « Packs & tarifs »).
+- Tous les liens « Mentions légales » des footers (accueil, site internet) pointent désormais vers `/mentions-legales` (fini les `href="#"`). Les ancres même-page des footers site internet (#approche, #diagnostic, #packs) et agent IA (#solution, #cadre, #formules, #faq) sont conservées.
+- `Nav` / `MobileMenu` : prop `active` rendue optionnelle (type exporté `NavActive`) pour permettre une page sans lien actif ; ajout de `aria-current="page"` sur le lien actif de la nav desktop.
 - Déplacement du handoff design `design_handoff_optiond/` → `docs/design_handoff_optiond/`.
 - SEO on-page : intégration naturelle de mots-clés (national FR) dans les eyebrows, titres de sections et accroches des 3 pages, sans réécriture lourde (réécritures plus poussées listées en recommandations dans `docs/seo/STRATEGY.md`).
 - Liens LinkedIn et GitHub réels dans le footer (ouverture en nouvel onglet, `rel="noopener noreferrer"`).
