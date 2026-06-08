@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -55,7 +56,10 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: antiFouc }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
