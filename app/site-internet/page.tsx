@@ -61,7 +61,7 @@ export default function SiteInternetPage() {
             <span className="dot"></span>
             <span>Atelier freelance · IA-augmenté</span>
             <span className="sep">—</span>
-            <span>Lancement 2026 · Annecy</span>
+            <span>Lancement 2026 · Haute-Savoie</span>
           </>
         }
         headline={
