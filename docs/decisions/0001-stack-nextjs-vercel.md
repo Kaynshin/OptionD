@@ -5,7 +5,7 @@
 
 ## Contexte
 
-Option/D est livré sous forme de handoff de design figé (`design_handoff_optiond/`) : prototypes HTML/CSS/JS validés, design system partagé, brand kit. Objectif : transposer ces pages en code de production pixel-perfect, dark + light, avec une nav globale et des composants partagés. Cible Lighthouse ≥ 95 mobile.
+Option/D est livré sous forme de handoff de design figé (`docs/design_handoff_optiond/`) : prototypes HTML/CSS/JS validés, design system partagé, brand kit. Objectif : transposer ces pages en code de production pixel-perfect, dark + light, avec une nav globale et des composants partagés. Cible Lighthouse ≥ 95 mobile.
 
 ## Décision
 

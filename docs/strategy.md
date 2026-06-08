@@ -13,7 +13,7 @@ Mettre en ligne le site **Option/D** : un site vitrine présentant 2 services (S
 
 1. Bootstrap repo + Vercel. *(en cours)*
 2. Scaffold Next.js (App Router + TS) déployable.
-3. Portage pixel-perfect des pages depuis `design_handoff_optiond/` (dark + light, nav globale, composants partagés).
+3. Portage pixel-perfect des pages depuis `docs/design_handoff_optiond/` (dark + light, nav globale, composants partagés).
 4. Perf : Lighthouse ≥ 95 mobile.
 
 ## Données à confirmer
