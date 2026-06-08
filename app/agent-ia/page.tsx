@@ -598,7 +598,7 @@ export default function AgentIaPage() {
                 </a>
               </div>
               <div className="cta-coords" style={{ justifyContent: 'center' }}>
-                <span>David Jomain</span>
+                <span>David</span>
                 <span className="sepd">·</span>
                 <span>david@optiond.fr</span>
               </div>
@@ -609,7 +609,7 @@ export default function AgentIaPage() {
 
       {/* ============== FOOTER ============== */}
       <Footer
-        brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David Jomain, Haute-Savoie."
+        brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David, Haute-Savoie."
         bottomStatus="Disponible · échange sous 24 h"
         columns={[
           {

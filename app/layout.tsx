@@ -19,7 +19,7 @@ const organizationJsonLd = {
     'Atelier freelance IA-augmenté — sites internet premium et agents IA téléphoniques pour commerces et indépendants.',
   founder: {
     '@type': 'Person',
-    name: 'David Jomain',
+    name: 'David',
     url: 'https://www.linkedin.com/in/davidjomain/',
     sameAs: [
       'https://www.linkedin.com/in/davidjomain/',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: '%s · Option/D',
   },
   description:
-    'Atelier freelance IA-augmenté — sites internet premium et agents IA pour commerces et indépendants. David Jomain, Haute-Savoie.',
+    'Atelier freelance IA-augmenté — sites internet premium et agents IA pour commerces et indépendants. David, Haute-Savoie.',
   icons: {
     icon: '/favicon.svg',
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'Option/D',
     title: 'Option/D',
     description:
-      'Atelier freelance IA-augmenté — sites internet premium et agents IA pour commerces et indépendants. David Jomain, Haute-Savoie.',
+      'Atelier freelance IA-augmenté — sites internet premium et agents IA pour commerces et indépendants. David, Haute-Savoie.',
     images: [
       {
         url: '/og-image.png',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Option/D',
     description:
-      'Atelier freelance IA-augmenté — sites internet premium et agents IA pour commerces et indépendants. David Jomain, Haute-Savoie.',
+      'Atelier freelance IA-augmenté — sites internet premium et agents IA pour commerces et indépendants. David, Haute-Savoie.',
     images: ['/og-image.png'],
   },
 };

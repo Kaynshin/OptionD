@@ -9,7 +9,7 @@ import JsonLd from '@/components/JsonLd';
 
 const PAGE_TITLE = 'Création de site internet & agent IA téléphonique';
 const PAGE_DESCRIPTION =
-  'David Jomain crée des sites internet premium livrés en 7 jours et installe des agents IA téléphoniques pour commerces et indépendants. Diagnostic offert.';
+  'David crée des sites internet premium livrés en 7 jours et installe des agents IA téléphoniques pour commerces et indépendants. Diagnostic offert.';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   keywords: [
     'freelance site internet et agent IA',
     'Option/D',
-    'David Jomain',
+    'David',
     'site internet premium freelance',
     'agent IA pour commerce',
     'digitaliser son commerce',
@@ -68,7 +68,7 @@ export default function Accueil() {
             <span className="dot"></span>
             <span>Atelier freelance · IA-augmenté</span>
             <span className="sep">—</span>
-            <span>David Jomain · Haute-Savoie</span>
+            <span>David · Haute-Savoie</span>
           </>
         }
         headline={
@@ -79,14 +79,14 @@ export default function Accueil() {
         }
         sub={
           <>
-            Option/D, c&apos;est David Jomain : des <strong>sites internet premium</strong> livrés
+            Option/D, c&apos;est David : des <strong>sites internet premium</strong> livrés
             en une semaine, et des <strong>agents IA</strong> qui répondent, relancent et rappellent
             vos clients — pendant que vous faites votre métier.
           </>
         }
         ctas={
           <>
-            <Button href="/site-internet" variant="primary" size="lg" arrow="→">
+            <Button href="/site-internet" variant="sec" size="lg" arrow="→">
               Sites internet
             </Button>
             <Button href="/agent-ia" variant="sec" size="lg" arrow="→">
@@ -276,7 +276,7 @@ export default function Accueil() {
       </section>
 
       <Footer
-        brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David Jomain, Haute-Savoie."
+        brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David, Haute-Savoie."
         bottomStatus="Disponible · 2026"
         columns={[
           {

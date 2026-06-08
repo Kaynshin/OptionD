@@ -136,7 +136,7 @@ export default function SiteInternetPage() {
             Sites premium, livrés en <span className="accent">sept jours.</span>
           </>
         }
-        sub="Création de sites internet sur-mesure : vitrines et landing pages haut de gamme pour artisans, commerçants et indépendants exigeants. Conçues par David Jomain en Haute-Savoie. Périmètre serré, exécution agent-IA, arbitrage qualité ligne par ligne."
+        sub="Création de sites internet sur-mesure : vitrines et landing pages haut de gamme pour artisans, commerçants et indépendants exigeants. Conçues par David en Haute-Savoie. Périmètre serré, exécution agent-IA, arbitrage qualité ligne par ligne."
         ctas={
           <>
             <Button href="#contact" variant="primary" size="lg" arrow="→">
@@ -206,7 +206,7 @@ export default function SiteInternetPage() {
       <CtaContact />
 
       <Footer
-        brandText="Atelier freelance IA-augmenté. Sites vitrines et landing pages haut de gamme livrés en environ une semaine. David Jomain, Haute-Savoie."
+        brandText="Atelier freelance IA-augmenté. Sites vitrines et landing pages haut de gamme livrés en environ une semaine. David, Haute-Savoie."
         bottomStatus="Disponible · 2 créneaux mai 2026"
         columns={[
           {

@@ -18,11 +18,14 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 - Liens LinkedIn et GitHub réels dans le footer (ouverture en nouvel onglet, `rel="noopener noreferrer"`).
 - Localisation de la marque affichée en « Haute-Savoie » (au lieu de « Annecy ») : titre accueil, eyebrows accueil/site internet, footer. Les exemples clients fictifs (Annecy) sont conservés.
 - Grosse passe responsive sur les 3 pages (breakpoints fins 560/480/360px, zéro débordement horizontal de 320 à 1440px, tap targets ≥ 40px, code window et case-tabs scrollables, reflow diag-card/strip/cta-band/footer).
+- Nom du fondateur affiché en « David » uniquement (jamais « David Jomain ») : pages, métadonnées, JSON-LD, footer, signature.
+- Les 2 CTA du hero de l'accueil sont désormais des boutons secondaires identiques (« Sites internet » n'est plus en magenta) : aucun des deux n'est mis en avant.
 
 ### Fixed
 
 ### Removed
 - Numéro de téléphone placeholder (`06 00 00 00 00`) retiré du site (footer, CTA site internet, coordonnées agent IA).
+- Mention « SIRET en cours » retirée du footer.
 - Toggle de thème clair/sombre : le site est désormais forcé en **dark** (`data-theme="dark"` en dur), composant `ThemeToggle` et script anti-FOUC supprimés. Le bloc CSS du thème clair reste présent mais inutilisé.
 
 ### Deprecated
