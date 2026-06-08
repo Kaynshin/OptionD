@@ -284,17 +284,11 @@ export default function Accueil() {
             links: [
               { label: 'Site internet', href: '/site-internet' },
               { label: 'Agent IA', href: '/agent-ia' },
-              { label: 'Diagnostic offert', href: '/site-internet#diagnostic' },
-              { label: 'Formules IA', href: '/agent-ia#formules' },
             ],
           },
           {
             title: 'Atelier',
-            links: [
-              { label: 'Approche', href: '/site-internet#approche' },
-              { label: 'Packs & tarifs', href: '/site-internet#packs' },
-              { label: 'Mentions légales', href: '#' },
-            ],
+            links: [{ label: 'Mentions légales', href: '/mentions-legales' }],
           },
         ]}
       />

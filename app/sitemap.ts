@@ -23,5 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: `${base}/mentions-legales`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 }
