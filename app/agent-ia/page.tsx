@@ -513,8 +513,6 @@ export default function AgentIaPage() {
               <div className="cta-coords" style={{ justifyContent: 'center' }}>
                 <span>David Jomain</span>
                 <span className="sepd">·</span>
-                <span>06 00 00 00 00</span>
-                <span className="sepd">·</span>
                 <span>david@optiond.fr</span>
               </div>
             </div>

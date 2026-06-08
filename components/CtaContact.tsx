@@ -36,9 +36,6 @@ export default function CtaContact() {
               <Button href="mailto:david@optiond.fr" variant="on-mag" size="lg" arrow="→">
                 david@optiond.fr
               </Button>
-              <Button href="tel:+33000000000" variant="on-mag-out" size="lg">
-                06 00 00 00 00
-              </Button>
             </div>
           </div>
           <div className="right">

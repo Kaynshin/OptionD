@@ -21,6 +21,9 @@ function FootLink({ label, href, ext }: FooterLink) {
   if (href.startsWith('/')) {
     return <Link href={href}>{inner}</Link>;
   }
+  if (href.startsWith('http')) {
+    return <a href={href} target="_blank" rel="noopener noreferrer">{inner}</a>;
+  }
   return <a href={href}>{inner}</a>;
 }
 
@@ -28,9 +31,8 @@ const CONTACT_COLUMN: FooterColumn = {
   title: 'Contact',
   links: [
     { label: 'david@optiond.fr', href: 'mailto:david@optiond.fr' },
-    { label: '06 00 00 00 00', href: '#' },
-    { label: 'LinkedIn', href: '#', ext: true },
-    { label: 'GitHub', href: '#', ext: true },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/davidjomain/', ext: true },
+    { label: 'GitHub', href: 'https://github.com/Kaynshin', ext: true },
   ],
 };
 
