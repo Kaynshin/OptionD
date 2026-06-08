@@ -4,6 +4,8 @@ import { GeistMono } from 'geist/font/mono';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import JsonLd from '@/components/JsonLd';
+import SectionReveal from '@/components/SectionReveal';
+import BackToTop from '@/components/BackToTop';
 import './globals.css';
 
 const organizationJsonLd = {
@@ -89,6 +91,8 @@ export default function RootLayout({
       <body>
         <JsonLd data={organizationJsonLd} />
         {children}
+        <SectionReveal />
+        <BackToTop />
         <Analytics />
         <SpeedInsights />
       </body>
