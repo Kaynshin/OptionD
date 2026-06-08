@@ -10,13 +10,13 @@ Site vitrine Next.js (App Router) + TypeScript. Rendu statique privilégié (per
 
 | Route | Rôle | Prototype source |
 |---|---|---|
-| `/` | Accueil (hub), présente les 2 services | `design_handoff_optiond/references/site/index.html` |
-| `/site-internet` | Offre sites vitrines & landing | `design_handoff_optiond/references/site/site-internet.html` |
-| `/agent-ia` | Offre assistants IA | `design_handoff_optiond/references/site/agent-ia.html` |
+| `/` | Accueil (hub), présente les 2 services | `docs/design_handoff_optiond/references/site/index.html` |
+| `/site-internet` | Offre sites vitrines & landing | `docs/design_handoff_optiond/references/site/site-internet.html` |
+| `/agent-ia` | Offre assistants IA | `docs/design_handoff_optiond/references/site/agent-ia.html` |
 
 ## Design system
 
-Source : `design_handoff_optiond/references/design-system.md` + `styles.css` (tokens, composants). À porter dans `globals.css` + composants partagés. Voir `docs/design-system.md`.
+Source : `docs/design_handoff_optiond/references/design-system.md` + `styles.css` (tokens, composants). À porter dans `globals.css` + composants partagés. Voir `docs/design-system.md`.
 
 ## Composants partagés (cible)
 
