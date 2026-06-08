@@ -615,29 +615,6 @@
   .foot-bot .right{display:flex;gap:24px;flex-wrap:wrap}
   .foot-bot .pulse{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--primary);margin-right:6px;animation:pulse 2.4s ease-in-out infinite}
 
-  /* ---------- THEME TOGGLE ---------- */
-  .theme-toggle{
-    display:inline-flex;align-items:center;gap:0;
-    background:var(--surface-card);
-    border:1px solid var(--hairline-strong);
-    border-radius:9999px;padding:3px;
-    height:36px;
-  }
-  .theme-toggle button{
-    appearance:none;border:none;background:transparent;
-    width:30px;height:28px;display:inline-flex;align-items:center;justify-content:center;
-    border-radius:9999px;cursor:pointer;color:var(--fg-muted);
-    transition:background-color .15s ease, color .15s ease;
-    font-family:var(--mono);font-size:12px;
-  }
-  .theme-toggle button:hover{color:var(--fg)}
-  .theme-toggle button[aria-pressed="true"]{
-    background:var(--surface-hover);color:var(--fg);
-    box-shadow:inset 0 0 0 1px var(--hairline-strong);
-  }
-  .theme-toggle button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
-  .theme-toggle svg{width:14px;height:14px;display:block}
-
   /* ---------- responsive ---------- */
   @media (max-width:1180px){
     .nav-links{display:none}
@@ -798,5 +775,207 @@
     .leak{padding:6px 20px 4px}
     .leak-row{gap:12px}
     .leak-row .lk-loss{display:none}
+  }
+
+  /* ===================== ADDITIONS hors-prototype : nav mobile + polish responsive ===================== */
+
+  /* ---------- prevent horizontal overflow globally ---------- */
+  html,body{overflow-x:hidden;max-width:100%}
+
+  /* ---------- MOBILE NAV : hamburger + panel (dark forced) ---------- */
+  /* Wrapper is the client island living inside .nav-inner. */
+  .mobile-nav{display:none}
+
+  .nav-burger{
+    display:none;
+    appearance:none;-webkit-appearance:none;
+    background:var(--surface-card);
+    border:1px solid var(--hairline-strong);
+    border-radius:8px;
+    width:44px;height:44px;
+    align-items:center;justify-content:center;
+    cursor:pointer;color:var(--fg);
+    transition:border-color .15s ease, background-color .15s ease;
+  }
+  .nav-burger:hover{border-color:var(--fg-muted)}
+  .nav-burger:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+  .nav-burger-box{
+    position:relative;display:inline-flex;flex-direction:column;
+    justify-content:space-between;width:20px;height:14px;
+  }
+  .nav-burger-bar{
+    display:block;width:100%;height:2px;border-radius:2px;
+    background:var(--fg);
+    transition:transform .25s cubic-bezier(.2,.7,.2,1), opacity .2s ease;
+  }
+  /* burger -> X when expanded */
+  .nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(2){opacity:0}
+  .nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+  /* full-screen dim overlay (rendered as an invisible close button) */
+  .mobile-overlay{
+    position:fixed;inset:0;top:64px;z-index:48;
+    border:none;padding:0;margin:0;cursor:default;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);
+    opacity:0;transition:opacity .2s ease;
+  }
+  .mobile-overlay.is-open{opacity:1}
+
+  /* drawer panel sliding under the nav bar */
+  .mobile-panel{
+    position:fixed;top:64px;left:0;right:0;z-index:49;
+    background:var(--canvas);
+    border-bottom:1px solid var(--hairline);
+    box-shadow:0 24px 48px -24px rgba(0,0,0,0.7);
+    padding:18px 20px 24px;
+    display:flex;flex-direction:column;gap:18px;
+    max-height:calc(100dvh - 64px);overflow-y:auto;
+    transform:translateY(-8px);opacity:0;
+    transition:transform .22s cubic-bezier(.2,.7,.2,1), opacity .18s ease;
+  }
+  .mobile-panel.is-open{transform:translateY(0);opacity:1}
+
+  .mobile-links{display:flex;flex-direction:column;gap:4px}
+  .mobile-links a{
+    display:flex;align-items:center;min-height:48px;
+    font-size:17px;font-weight:500;color:var(--fg-body);
+    padding:10px 14px;border-radius:8px;
+    border:1px solid transparent;
+    transition:background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .mobile-links a:hover{color:var(--fg);background:var(--surface-hover)}
+  .mobile-links a:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+  .mobile-links a.is-active{color:var(--fg);background:var(--surface-hover);border-color:var(--hairline-strong)}
+
+  .mobile-foot{
+    display:flex;flex-direction:column;gap:16px;
+    padding-top:18px;border-top:1px solid var(--hairline);
+  }
+  .mobile-foot .btn{width:100%;height:48px;font-size:15px}
+  .mobile-status{
+    display:inline-flex;align-items:center;
+    font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-muted);
+  }
+  .mobile-status .pulse{
+    display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:var(--success);box-shadow:0 0 8px var(--success);
+    margin-right:8px;vertical-align:middle;animation:pulse 2.4s ease-in-out infinite;
+  }
+
+  /* show the burger island only on the mobile/tablet range (<= 1180px),
+     matching the prototype breakpoint that hides .nav-links */
+  @media (max-width:1180px){
+    .mobile-nav{display:block}
+    .nav-burger{display:inline-flex}
+    /* CTA + status now live inside the panel — keep the bar clean */
+    .nav-cta{display:none}
+  }
+  /* keep desktop untouched: burger never shows >= 1181px */
+  @media (min-width:1181px){
+    .nav-burger{display:none}
+    .mobile-overlay,.mobile-panel{display:none}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .nav-burger-bar,
+    .mobile-overlay,
+    .mobile-panel{transition:none}
+    .mobile-status .pulse{animation:none}
+  }
+
+  /* ===================== RESPONSIVE POLISH ===================== */
+
+  /* allow long mono / code strings to wrap instead of pushing layout wide */
+  .nav-cta .small-link{white-space:nowrap}
+
+  /* ---------- <= 1100px : diagnostic + builder stacks ---------- */
+  @media (max-width:1100px){
+    .diag-row{grid-template-columns:1fr;gap:32px}
+    .build{grid-template-columns:1fr;gap:32px}
+    .build-copy h3{font-size:clamp(28px,5vw,40px)}
+  }
+
+  /* ---------- <= 720px : section paddings + dense grids ---------- */
+  @media (max-width:720px){
+    .hero{padding:72px 0 64px}
+    .hero-lock{margin-bottom:40px}
+    .hero-meta{gap:18px 24px;margin-top:36px}
+    .codewin pre{font-size:12.5px;padding:18px 18px}
+    .testi{grid-template-columns:1fr;gap:24px;padding:32px}
+    .testi .quote{font-size:21px}
+    .testi .who{border-left:none;border-top:1px solid var(--hairline);padding-left:0;padding-top:24px}
+    .cta-band{padding:40px 28px;gap:32px}
+    .cta-band h2{font-size:clamp(30px,7vw,48px)}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .foot-brand{grid-column:1 / -1}
+  }
+
+  /* ---------- <= 560px : diagnostic rows + cards reflow ---------- */
+  @media (max-width:560px){
+    .diag-row-line{
+      grid-template-columns:1fr auto;gap:6px 14px;
+      padding:14px 0;align-items:baseline;
+    }
+    .diag-row-line .k{grid-column:1 / -1}
+    .diag-row-line .v{grid-column:1}
+    .diag-row-line .score{grid-column:2;grid-row:2}
+    .diag-card .head{flex-wrap:wrap;gap:10px;padding:16px 20px}
+    .diag-card .body{padding:18px 20px}
+    .diag-card .findings{padding:18px 20px 22px}
+    .strip{flex-direction:column;align-items:stretch}
+    .strip .label,.strip .item{
+      border-right:none;border-bottom:1px solid var(--hairline);
+      justify-content:flex-start;
+    }
+    .strip .item:last-child{border-bottom:none}
+  }
+
+  /* ---------- <= 480px : tighten display type + paddings, kill overflow ---------- */
+  @media (max-width:480px){
+    .container{padding:0 16px}
+    .nav-inner{padding:0 16px}
+    section.band{padding:64px 0}
+
+    /* wordmark : drop the clamp floor so it never overflows narrow screens */
+    .hero-lock .wm{font-size:clamp(48px,15vw,132px)}
+    .hero-headline{font-size:clamp(30px,9vw,72px);max-width:none}
+    .hero-sub{font-size:16px}
+    .hero-eyebrow{margin-bottom:24px;flex-wrap:wrap;justify-content:center}
+    .hero-cta .btn{width:100%}
+
+    .band-head .left h2{font-size:clamp(28px,8vw,56px)}
+
+    .stat{padding:32px 20px}
+    .stat .num{font-size:clamp(44px,13vw,64px)}
+    .pack{padding:28px 24px}
+    .pack .price{font-size:34px}
+
+    .cta-band{padding:32px 20px;border-radius:12px}
+    .cta-band .form{padding:18px}
+    .cta-band .form .url{flex-wrap:wrap;height:auto;padding:6px;gap:6px}
+    .cta-band .form .url input{min-width:0;width:100%}
+    .cta-band .form .url .btn{width:100%}
+
+    .case .meta{padding:18px 20px}
+    .case-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+    .case-tabs .tab{white-space:nowrap}
+
+    .modulators{gap:10px}
+    .foot-grid{grid-template-columns:1fr;gap:28px}
+    .foot-brand .wm{font-size:38px}
+    .foot-bot{flex-direction:column;align-items:flex-start;gap:14px}
+
+    .build-copy h3{font-size:clamp(26px,8vw,40px)}
+    .diag-copy h3{font-size:clamp(24px,7vw,32px)}
+    .svc h3{font-size:clamp(24px,7vw,30px)}
+  }
+
+  /* ---------- <= 360px : last-mile guards for very small phones ---------- */
+  @media (max-width:360px){
+    .hero-lock .wm{font-size:clamp(42px,16vw,132px)}
+    .hero-meta{gap:14px 18px}
+    .nav-burger{width:40px;height:40px}
   }
 
