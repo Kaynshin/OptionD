@@ -11,17 +11,22 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 - Intégration du handoff de design (`docs/design_handoff_optiond/`) comme source de vérité visuelle.
 - Site Next.js (App Router + TypeScript) : portage pixel-perfect des 3 pages du handoff (`/`, `/site-internet`, `/agent-ia`), `globals.css` = `styles.css` verbatim, 24 composants, particules canvas et thème dark/light portés verbatim depuis `app.js`, polices Geist via `next/font`, anti-FOUC, favicon + OG. Build `next build` vert.
 - Menu mobile (hamburger) accessible sous 1180px : panneau avec les 3 liens + CTA + statut, gestion clavier (Escape, piège de focus), `aria-expanded`/`aria-modal`, verrou de scroll, animations désactivées sous `prefers-reduced-motion`.
+- SEO : données structurées JSON-LD (`ProfessionalService` + founder, `WebPage`, `Service` ×2 avec `Offer`, `FAQPage` ×2), `sitemap.xml` (`app/sitemap.ts`), `robots.txt` (`app/robots.ts`), métadonnées par page (title/description/canonical/OpenGraph/Twitter) optimisées national FR, composant `JsonLd`. Recherche concurrence + mots-clés et stratégie dans `docs/seo/STRATEGY.md`.
 
 ### Changed
 - Déplacement du handoff design `design_handoff_optiond/` → `docs/design_handoff_optiond/`.
+- SEO on-page : intégration naturelle de mots-clés (national FR) dans les eyebrows, titres de sections et accroches des 3 pages, sans réécriture lourde (réécritures plus poussées listées en recommandations dans `docs/seo/STRATEGY.md`).
 - Liens LinkedIn et GitHub réels dans le footer (ouverture en nouvel onglet, `rel="noopener noreferrer"`).
 - Localisation de la marque affichée en « Haute-Savoie » (au lieu de « Annecy ») : titre accueil, eyebrows accueil/site internet, footer. Les exemples clients fictifs (Annecy) sont conservés.
 - Grosse passe responsive sur les 3 pages (breakpoints fins 560/480/360px, zéro débordement horizontal de 320 à 1440px, tap targets ≥ 40px, code window et case-tabs scrollables, reflow diag-card/strip/cta-band/footer).
+- Nom du fondateur affiché en « David » uniquement (jamais « David Jomain ») : pages, métadonnées, JSON-LD, footer, signature.
+- Les 2 CTA du hero de l'accueil sont désormais des boutons secondaires identiques (« Sites internet » n'est plus en magenta) : aucun des deux n'est mis en avant.
 
 ### Fixed
 
 ### Removed
 - Numéro de téléphone placeholder (`06 00 00 00 00`) retiré du site (footer, CTA site internet, coordonnées agent IA).
+- Mention « SIRET en cours » retirée du footer.
 - Toggle de thème clair/sombre : le site est désormais forcé en **dark** (`data-theme="dark"` en dur), composant `ThemeToggle` et script anti-FOUC supprimés. Le bloc CSS du thème clair reste présent mais inutilisé.
 - Indicateur de disponibilité (`.small-link` « Disponible · 2026 » / « 2 créneaux mai » / « Réponse sous 24 h » + point pulsé) retiré du header et du menu mobile. La prop `statusText` est conservée optionnelle (non rendue) pour ne pas casser l'API ; CSS associé inutilisé.
 

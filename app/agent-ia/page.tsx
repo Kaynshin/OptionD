@@ -8,16 +8,126 @@ import Faq from '@/components/Faq';
 import Footer from '@/components/Footer';
 import LeakPanel from '@/components/LeakPanel';
 import PricingCard from '@/components/PricingCard';
+import JsonLd from '@/components/JsonLd';
+
+const PAGE_TITLE = 'Agent IA téléphonique · Standard téléphonique IA';
+const PAGE_DESCRIPTION =
+  "Agent vocal IA qui répond au téléphone, rappelle vos prospects et réveille vos anciens clients. Ne ratez plus un appel. Données en France, RGPD & AI Act.";
 
 export const metadata: Metadata = {
-  title: 'Option/D — Agents IA · Votre équipe qui ne dort jamais.',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    'agent IA téléphonique',
+    'standard téléphonique IA',
+    'agent vocal IA',
+    'callbot',
+    'standardiste virtuelle IA',
+    'réceptionniste virtuelle IA',
+    'prise de rendez-vous IA 24/7',
+    "ne plus rater d'appels",
+    'agent vocal IA RGPD France',
+  ],
+  alternates: { canonical: '/agent-ia' },
+  openGraph: {
+    title: `${PAGE_TITLE} · Option/D`,
+    description: PAGE_DESCRIPTION,
+    url: '/agent-ia',
+  },
+  twitter: {
+    title: `${PAGE_TITLE} · Option/D`,
+    description: PAGE_DESCRIPTION,
+  },
+};
+
+// Source unique pour le composant <Faq> ET le JSON-LD FAQPage (parité texte exigée par Google).
+const FAQ_ITEMS = [
+  {
+    q: "C'est un robot, mes clients vont le sentir ?",
+    a: "Les messages sont écrits dans votre ton, naturels, et personnalisés avec le prénom et l'historique de la personne. Pour la partie standard téléphonique IA, la loi demande de préciser que c'est un assistant : on le dit simplement, et franchement, les gens préfèrent une réponse tout de suite à un répondeur.",
+  },
+  {
+    q: 'Et mes données ?',
+    a: "Elles restent chez vous et en France. Je ne les revends pas, je ne les utilise pour rien d'autre. C'est écrit noir sur blanc dans le contrat.",
+  },
+  {
+    q: "Je n'y connais rien en informatique.",
+    a: "C'est justement le but. Vous n'installez rien, vous ne gérez rien. Je m'occupe de tout, et vous regardez les résultats.",
+  },
+  {
+    q: "Et si ça ne marche pas chez moi ?",
+    a: "On commence petit, par vos anciens clients, là où le risque est nul et le résultat rapide. Vous voyez les chiffres avant d'aller plus loin.",
+  },
+  {
+    q: "C'est cher.",
+    a: "Combien vous rapporte un seul client ? On commence par récupérer des clients que vous perdiez sans le voir — et on commence toujours par vos anciens clients : zéro publicité, résultat rapide. Vous voyez les chiffres avant d'aller plus loin.",
+  },
+];
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Agent IA téléphonique / Standard téléphonique IA',
+  name: 'Agents IA téléphoniques pour commerces et indépendants',
   description:
-    "J'installe pour votre commerce des assistants automatiques qui répondent au téléphone, relancent vos anciens clients et rappellent vos prospects — pendant que vous faites votre métier.",
+    'Agent vocal IA qui répond au téléphone, rappelle les prospects et réveille les anciens clients. Données en France, RGPD & AI Act.',
+  provider: { '@id': 'https://optiond.fr/#organization' },
+  areaServed: { '@type': 'Country', name: 'France' },
+  url: 'https://optiond.fr/agent-ia',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Découverte',
+      price: '890',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '890',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Essentiel',
+      price: '1890',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '1890',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Complet',
+      price: '3490',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '3490',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+    },
+  ],
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
 };
 
 export default function AgentIaPage() {
   return (
     <main data-screen-label="Agent IA — Option/D">
+      <JsonLd data={[serviceJsonLd, faqJsonLd]} />
       <Nav
         active="agent"
         statusText="Réponse sous 24 h"
@@ -31,7 +141,7 @@ export default function AgentIaPage() {
         eyebrow={
           <>
             <span className="dot"></span>
-            <span>Option/D · Agents IA</span>
+            <span>Option/D · Agent IA téléphonique</span>
             <span className="sep">—</span>
             <span>Commerces &amp; indépendants</span>
           </>
@@ -41,7 +151,7 @@ export default function AgentIaPage() {
             Votre équipe qui <span className="accent">ne dort jamais.</span>
           </>
         }
-        sub="J'installe pour votre commerce des assistants automatiques qui répondent au téléphone, relancent vos anciens clients et rappellent vos prospects — pendant que vous faites votre métier."
+        sub="J'installe pour votre commerce un agent vocal IA — un standard téléphonique IA qui répond au téléphone, relance vos anciens clients et rappelle vos prospects — pendant que vous faites votre métier."
         ctas={
           <>
             <Button href="#contact" variant="primary" size="lg" arrow="→">
@@ -120,9 +230,9 @@ export default function AgentIaPage() {
               <h2>Ce que je mets en place.</h2>
             </div>
             <p className="right">
-              Des assistants automatiques branchés sur votre activité, qui s&apos;occupent de ce
-              que vous n&apos;avez pas le temps de faire —{' '}
-              <strong>sans rien changer à votre métier</strong>.
+              Un standard téléphonique IA branché sur votre activité — réponse aux appels,
+              prise de rendez-vous 24/7 et relances — qui s&apos;occupe de ce que vous n&apos;avez
+              pas le temps de faire, <strong>sans rien changer à votre métier</strong>.
             </p>
           </div>
 
@@ -459,30 +569,7 @@ export default function AgentIaPage() {
             </p>
           </div>
 
-          <Faq
-            items={[
-              {
-                q: "C'est un robot, mes clients vont le sentir ?",
-                a: "Les messages sont écrits dans votre ton, naturels, et personnalisés avec le prénom et l'historique de la personne. Pour la partie téléphone, la loi demande de préciser que c'est un assistant : on le dit simplement, et franchement, les gens préfèrent une réponse tout de suite à un répondeur.",
-              },
-              {
-                q: 'Et mes données ?',
-                a: "Elles restent chez vous et en France. Je ne les revends pas, je ne les utilise pour rien d'autre. C'est écrit noir sur blanc dans le contrat.",
-              },
-              {
-                q: "Je n'y connais rien en informatique.",
-                a: "C'est justement le but. Vous n'installez rien, vous ne gérez rien. Je m'occupe de tout, et vous regardez les résultats.",
-              },
-              {
-                q: "Et si ça ne marche pas chez moi ?",
-                a: "On commence petit, par vos anciens clients, là où le risque est nul et le résultat rapide. Vous voyez les chiffres avant d'aller plus loin.",
-              },
-              {
-                q: "C'est cher.",
-                a: "Combien vous rapporte un seul client ? On commence par récupérer des clients que vous perdiez sans le voir — et on commence toujours par vos anciens clients : zéro publicité, résultat rapide. Vous voyez les chiffres avant d'aller plus loin.",
-              },
-            ]}
-          />
+          <Faq items={FAQ_ITEMS} />
         </div>
       </section>
 
@@ -511,7 +598,7 @@ export default function AgentIaPage() {
                 </a>
               </div>
               <div className="cta-coords" style={{ justifyContent: 'center' }}>
-                <span>David Jomain</span>
+                <span>David</span>
                 <span className="sepd">·</span>
                 <span>david@optiond.fr</span>
               </div>
@@ -522,7 +609,7 @@ export default function AgentIaPage() {
 
       {/* ============== FOOTER ============== */}
       <Footer
-        brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David Jomain, Haute-Savoie."
+        brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David, Haute-Savoie."
         bottomStatus="Disponible · échange sous 24 h"
         columns={[
           {
@@ -540,7 +627,7 @@ export default function AgentIaPage() {
               { label: 'Accueil', href: '/' },
               { label: 'Site internet', href: '/site-internet' },
               { label: 'Agent IA', href: '/agent-ia' },
-              { label: 'Mentions légales', href: '#' },
+              { label: 'Mentions légales', href: '/mentions-legales' },
             ],
           },
         ]}

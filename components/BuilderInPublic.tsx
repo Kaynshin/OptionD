@@ -36,7 +36,7 @@ export default function BuilderInPublic() {
               ne se paye pas en qualité — si l'arbitrage se présente, on coupe sur
               le périmètre, jamais sur la finition. »
             </div>
-            <div className="sig">— David Jomain, fondateur</div>
+            <div className="sig">— David, fondateur</div>
           </div>
 
           <CodeWindow />

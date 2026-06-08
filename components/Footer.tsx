@@ -67,8 +67,7 @@ export default function Footer({ brandText, bottomStatus, columns }: FooterProps
             {bottomStatus}
           </div>
           <div className="right">
-            <span>© 2026 Option/D — David Jomain</span>
-            <span>SIRET en cours</span>
+            <span>© 2026 Option/D — David</span>
             <span>Haute-Savoie</span>
           </div>
         </div>
