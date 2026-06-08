@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 
 export const metadata: Metadata = {
-  title: 'Option/D — Sites internet premium & agents IA · Annecy',
+  title: 'Option/D — Sites internet premium & agents IA · Haute-Savoie',
   description:
     'David Jomain : des sites internet premium livrés en une semaine, et des agents IA qui répondent, relancent et rappellent vos clients — pendant que vous faites votre métier.',
 };
@@ -30,7 +30,7 @@ export default function Accueil() {
             <span className="dot"></span>
             <span>Atelier freelance · IA-augmenté</span>
             <span className="sep">—</span>
-            <span>David Jomain · Annecy</span>
+            <span>David Jomain · Haute-Savoie</span>
           </>
         }
         headline={

@@ -69,7 +69,7 @@ export default function Footer({ brandText, bottomStatus, columns }: FooterProps
           <div className="right">
             <span>© 2026 Option/D — David Jomain</span>
             <span>SIRET en cours</span>
-            <span>Annecy · Haute-Savoie</span>
+            <span>Haute-Savoie</span>
           </div>
         </div>
       </div>
