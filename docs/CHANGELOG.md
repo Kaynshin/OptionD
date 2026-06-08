@@ -21,12 +21,15 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 - Grosse passe responsive sur les 3 pages (breakpoints fins 560/480/360px, zéro débordement horizontal de 320 à 1440px, tap targets ≥ 40px, code window et case-tabs scrollables, reflow diag-card/strip/cta-band/footer).
 - Nom du fondateur affiché en « David » uniquement (jamais « David Jomain ») : pages, métadonnées, JSON-LD, footer, signature.
 - Les 2 CTA du hero de l'accueil sont désormais des boutons secondaires identiques (« Sites internet » n'est plus en magenta) : aucun des deux n'est mis en avant.
+- Copyright du footer centré ; indicateur de disponibilité du footer (« Disponible · … ») retiré.
+- Page Site internet : section « Cas clients » retirée et sections renumérotées (Builder-in-public → 04, Questions fréquentes → 05).
 
 ### Fixed
 
 ### Removed
 - Numéro de téléphone placeholder (`06 00 00 00 00`) retiré du site (footer, CTA site internet, coordonnées agent IA).
 - Mention « SIRET en cours » retirée du footer.
+- Section « Cas clients » de la page Site internet et liens « Cas clients » des footers (accueil + site internet).
 - Toggle de thème clair/sombre : le site est désormais forcé en **dark** (`data-theme="dark"` en dur), composant `ThemeToggle` et script anti-FOUC supprimés. Le bloc CSS du thème clair reste présent mais inutilisé.
 - Indicateur de disponibilité (`.small-link` « Disponible · 2026 » / « 2 créneaux mai » / « Réponse sous 24 h » + point pulsé) retiré du header et du menu mobile. La prop `statusText` est conservée optionnelle (non rendue) pour ne pas casser l'API ; CSS associé inutilisé.
 

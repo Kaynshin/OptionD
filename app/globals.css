@@ -979,3 +979,7 @@
     .nav-burger{width:40px;height:40px}
   }
 
+  /* ---------- footer : copyright centré (indicateur de dispo retiré) ---------- */
+  .foot-bot{justify-content:center;align-items:center}
+  .foot-bot .right{justify-content:center;text-align:center}
+

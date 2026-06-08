@@ -9,7 +9,6 @@ import Approche from '@/components/Approche';
 import Diagnostic from '@/components/Diagnostic';
 import Stats from '@/components/Stats';
 import Packs from '@/components/Packs';
-import Cases from '@/components/Cases';
 import BuilderInPublic from '@/components/BuilderInPublic';
 import Testimonial from '@/components/Testimonial';
 import CtaContact from '@/components/CtaContact';
@@ -179,8 +178,6 @@ export default function SiteInternetPage() {
 
       <Packs />
 
-      <Cases />
-
       <BuilderInPublic />
 
       <Testimonial />
@@ -189,7 +186,7 @@ export default function SiteInternetPage() {
         <div className="container">
           <div className="band-head">
             <div className="left">
-              <div className="eyebrow">06 — Questions fréquentes</div>
+              <div className="eyebrow">05 — Questions fréquentes</div>
               <h2>Réponses courtes, sans détour.</h2>
             </div>
             <p className="right">
@@ -215,7 +212,6 @@ export default function SiteInternetPage() {
               { label: 'Approche', href: '#approche' },
               { label: 'Diagnostic offert', href: '#diagnostic' },
               { label: 'Packs & tarifs', href: '#packs' },
-              { label: 'Cas clients', href: '#cas' },
             ],
           },
           {
