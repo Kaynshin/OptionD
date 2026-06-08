@@ -5,6 +5,20 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+### Removed
+
+### Deprecated
+
+### Security
+
+## [1.0.0] - 2026-06-08
+
+### Added
 - Page **Mentions légales** (`/mentions-legales`, server component) : éditeur, directeur de la publication, hébergeur (Vercel Inc.), propriété intellectuelle, données personnelles (RGPD : finalité, base légale, durée, droits, DPO), mesure d'audience/cookies (Vercel Analytics + Speed Insights, sans cookie publicitaire) et contact. Placeholders `[à compléter]` pour SIRET et adresse. Métadonnées (title/description/canonical/OpenGraph/Twitter), styles dédiés `.legal` dans `globals.css` (section ADDITIONS), ajout au `sitemap.ts` (priority 0.3). Nav sans lien actif sur cette page.
 - Fade-in des sections au scroll (`components/SectionReveal.tsx`) : `IntersectionObserver` vanilla sur les `section.band`, révélées une à une à l'entrée dans le viewport ; masquage CSS activé uniquement quand le JS tourne (classe `reveal-on` sur `<html>`, contenu visible sans JS / au SSR) ; ré-observation des sections à chaque navigation client (App Router, `usePathname`) ; le `.hero` (above-the-fold) reste visible immédiatement.
 - Bouton « retour en haut » (`components/BackToTop.tsx`) : fixé en bas à droite, apparaît après ~500px de scroll, remonte la page (smooth) ; accessible (`<button>` + `aria-label`, focus-visible magenta), style sobre via tokens CSS avec halo magenta léger au hover.
