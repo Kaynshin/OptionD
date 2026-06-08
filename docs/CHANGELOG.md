@@ -5,6 +5,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ## [Unreleased]
 
 ### Added
+- Intégration Vercel Speed Insights (`@vercel/speed-insights` v2.0.0) dans le layout racine — mesure des Core Web Vitals sur les déploiements Vercel.
 - Intégration Vercel Analytics (`@vercel/analytics` v2.0.1) dans le layout racine — collecte automatique des pages vues sur les déploiements Vercel.
 - Bootstrap du dépôt : structure `docs/`, README, `.gitignore` Next.js.
 - Intégration du handoff de design (`docs/design_handoff_optiond/`) comme source de vérité visuelle.
@@ -27,6 +28,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 - Numéro de téléphone placeholder (`06 00 00 00 00`) retiré du site (footer, CTA site internet, coordonnées agent IA).
 - Mention « SIRET en cours » retirée du footer.
 - Toggle de thème clair/sombre : le site est désormais forcé en **dark** (`data-theme="dark"` en dur), composant `ThemeToggle` et script anti-FOUC supprimés. Le bloc CSS du thème clair reste présent mais inutilisé.
+- Indicateur de disponibilité (`.small-link` « Disponible · 2026 » / « 2 créneaux mai » / « Réponse sous 24 h » + point pulsé) retiré du header et du menu mobile. La prop `statusText` est conservée optionnelle (non rendue) pour ne pas casser l'API ; CSS associé inutilisé.
 
 ### Deprecated
 

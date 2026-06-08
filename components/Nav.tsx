@@ -6,12 +6,13 @@ import MobileMenu from './MobileMenu';
 
 type NavProps = {
   active: 'home' | 'site' | 'agent';
-  statusText: ReactNode;
+  /** Conservé pour compat. d'API (les pages le passent encore) — non rendu. */
+  statusText?: ReactNode;
   ctaLabel: ReactNode;
   ctaHref: string;
 };
 
-export default function Nav({ active, statusText, ctaLabel, ctaHref }: NavProps) {
+export default function Nav({ active, ctaLabel, ctaHref }: NavProps) {
   return (
     <header className="nav">
       <div className="nav-inner">
@@ -41,20 +42,11 @@ export default function Nav({ active, statusText, ctaLabel, ctaHref }: NavProps)
           </Link>
         </nav>
         <div className="nav-cta">
-          <span className="small-link">
-            <span className="pulse"></span>
-            {statusText}
-          </span>
           <Button href={ctaHref} variant="primary" arrow="→">
             {ctaLabel}
           </Button>
         </div>
-        <MobileMenu
-          active={active}
-          statusText={statusText}
-          ctaLabel={ctaLabel}
-          ctaHref={ctaHref}
-        />
+        <MobileMenu active={active} ctaLabel={ctaLabel} ctaHref={ctaHref} />
       </div>
     </header>
   );
