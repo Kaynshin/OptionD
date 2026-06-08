@@ -6,7 +6,7 @@ export default function BuilderInPublic() {
       <div className="container">
         <div className="band-head">
           <div className="left">
-            <div className="eyebrow">05 — Builder-in-public</div>
+            <div className="eyebrow">04 — Builder-in-public</div>
             <h2>L'IA accélère la production. Pas la réflexion.</h2>
           </div>
           <p className="right">

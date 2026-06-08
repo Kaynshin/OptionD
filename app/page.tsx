@@ -293,7 +293,6 @@ export default function Accueil() {
             links: [
               { label: 'Approche', href: '/site-internet#approche' },
               { label: 'Packs & tarifs', href: '/site-internet#packs' },
-              { label: 'Cas clients', href: '/site-internet#cas' },
               { label: 'Mentions légales', href: '#' },
             ],
           },

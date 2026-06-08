@@ -7,7 +7,8 @@ type FooterColumn = { title: string; links: FooterLink[] };
 
 type FooterProps = {
   brandText: ReactNode;
-  bottomStatus: ReactNode;
+  /** Conservé pour compat. d'API (les pages le passent encore) — non rendu. */
+  bottomStatus?: ReactNode;
   columns: FooterColumn[];
 };
 
@@ -36,7 +37,7 @@ const CONTACT_COLUMN: FooterColumn = {
   ],
 };
 
-export default function Footer({ brandText, bottomStatus, columns }: FooterProps) {
+export default function Footer({ brandText, columns }: FooterProps) {
   const allColumns = [...columns, CONTACT_COLUMN];
 
   return (
@@ -62,10 +63,6 @@ export default function Footer({ brandText, bottomStatus, columns }: FooterProps
           ))}
         </div>
         <div className="foot-bot">
-          <div>
-            <span className="pulse"></span>
-            {bottomStatus}
-          </div>
           <div className="right">
             <span>© 2026 Option/D — David</span>
             <span>Haute-Savoie</span>
