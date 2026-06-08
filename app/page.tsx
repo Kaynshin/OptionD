@@ -5,16 +5,54 @@ import IconCard from '@/components/IconCard';
 import ServiceCard from '@/components/ServiceCard';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
+import JsonLd from '@/components/JsonLd';
+
+const PAGE_TITLE = 'Création de site internet & agent IA téléphonique';
+const PAGE_DESCRIPTION =
+  'David Jomain crée des sites internet premium livrés en 7 jours et installe des agents IA téléphoniques pour commerces et indépendants. Diagnostic offert.';
 
 export const metadata: Metadata = {
-  title: 'Option/D — Sites internet premium & agents IA · Haute-Savoie',
-  description:
-    'David Jomain : des sites internet premium livrés en une semaine, et des agents IA qui répondent, relancent et rappellent vos clients — pendant que vous faites votre métier.',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    'freelance site internet et agent IA',
+    'Option/D',
+    'David Jomain',
+    'site internet premium freelance',
+    'agent IA pour commerce',
+    'digitaliser son commerce',
+  ],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: `${PAGE_TITLE} · Option/D`,
+    description: PAGE_DESCRIPTION,
+    url: '/',
+  },
+  twitter: {
+    title: `${PAGE_TITLE} · Option/D`,
+    description: PAGE_DESCRIPTION,
+  },
+};
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://optiond.fr/#webpage',
+  url: 'https://optiond.fr/',
+  name: `${PAGE_TITLE} · Option/D`,
+  description: PAGE_DESCRIPTION,
+  inLanguage: 'fr-FR',
+  isPartOf: { '@id': 'https://optiond.fr/#organization' },
+  about: { '@id': 'https://optiond.fr/#organization' },
+  primaryImageOfPage: 'https://optiond.fr/og-image.png',
 };
 
 export default function Accueil() {
   return (
     <main data-screen-label="Accueil — Option/D">
+      <JsonLd data={webPageJsonLd} />
       <Nav
         active="home"
         statusText="Disponible · 2026"
@@ -137,9 +175,9 @@ export default function Accueil() {
               }
               eyebrow="Service 02"
               title="Agents IA"
-              lede="Des assistants automatiques qui répondent au téléphone, réveillent vos anciens clients et rappellent vos prospects — pendant que vous travaillez."
+              lede="Un agent IA téléphonique qui répond au téléphone, réveille vos anciens clients et rappelle vos prospects — pendant que vous travaillez."
               items={[
-                'Le standardiste qui ne rate aucun appel',
+                'Le standard téléphonique IA qui ne rate aucun appel',
                 'Réveil des anciens clients endormis',
                 'Rappel des prospects en moins de 5 min',
                 'Données en France, conforme RGPD & AI Act',

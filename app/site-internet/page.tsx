@@ -13,11 +13,34 @@ import Cases from '@/components/Cases';
 import BuilderInPublic from '@/components/BuilderInPublic';
 import Testimonial from '@/components/Testimonial';
 import CtaContact from '@/components/CtaContact';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Option/D — Site internet · Sites premium, livrés en sept jours.',
+  title: 'Création site internet sur-mesure · Site vitrine',
   description:
-    'Vitrines et landing pages haut de gamme pour artisans, commerçants et indépendants exigeants. Conçues par David Jomain en Haute-Savoie. Diagnostic offert avant tout devis.',
+    'Site vitrine et landing page haut de gamme livrés en 7 jours, prix affichés de 2 500 à 5 500 €. Next.js, Lighthouse ≥ 95. Diagnostic offert avant devis.',
+  keywords: [
+    'création site internet sur-mesure',
+    'site vitrine',
+    'prix site vitrine',
+    'landing page sur-mesure',
+    'site internet livré en une semaine',
+    'site internet artisan',
+    'site Next.js sur-mesure',
+    'refonte site internet',
+  ],
+  alternates: { canonical: '/site-internet' },
+  openGraph: {
+    title: 'Création site internet sur-mesure · Site vitrine · Option/D',
+    description:
+      'Site vitrine et landing page haut de gamme livrés en 7 jours, prix affichés de 2 500 à 5 500 €. Next.js, Lighthouse ≥ 95. Diagnostic offert avant devis.',
+    url: '/site-internet',
+  },
+  twitter: {
+    title: 'Création site internet sur-mesure · Site vitrine · Option/D',
+    description:
+      'Site vitrine et landing page haut de gamme livrés en 7 jours, prix affichés de 2 500 à 5 500 €. Next.js, Lighthouse ≥ 95. Diagnostic offert avant devis.',
+  },
 };
 
 const FAQ_ITEMS = [
@@ -43,9 +66,53 @@ const FAQ_ITEMS = [
   },
 ];
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Création de site internet sur-mesure',
+  name: 'Sites internet premium — vitrines & landing pages',
+  description:
+    'Sites vitrines et landing pages haut de gamme livrés en environ 7 jours. Next.js, Lighthouse ≥ 95.',
+  provider: { '@id': 'https://optiond.fr/#organization' },
+  areaServed: { '@type': 'Country', name: 'France' },
+  url: 'https://optiond.fr/site-internet',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Landing & vitrine 3-5 pages',
+      price: '2500',
+      priceCurrency: 'EUR',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Vitrine 6-10 pages',
+      price: '3800',
+      priceCurrency: 'EUR',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Identité, animations, fonctions',
+      price: '5500',
+      priceCurrency: 'EUR',
+    },
+  ],
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
 export default function SiteInternetPage() {
   return (
     <main data-screen-label="Site Option D — Home">
+      <JsonLd data={[serviceJsonLd, faqJsonLd]} />
+
       <Nav
         active="site"
         statusText="2 créneaux mai"
@@ -69,7 +136,7 @@ export default function SiteInternetPage() {
             Sites premium, livrés en <span className="accent">sept jours.</span>
           </>
         }
-        sub="Vitrines et landing pages haut de gamme pour artisans, commerçants et indépendants exigeants. Conçues par David Jomain en Haute-Savoie. Périmètre serré, exécution agent-IA, arbitrage qualité ligne par ligne."
+        sub="Création de sites internet sur-mesure : vitrines et landing pages haut de gamme pour artisans, commerçants et indépendants exigeants. Conçues par David Jomain en Haute-Savoie. Périmètre serré, exécution agent-IA, arbitrage qualité ligne par ligne."
         ctas={
           <>
             <Button href="#contact" variant="primary" size="lg" arrow="→">

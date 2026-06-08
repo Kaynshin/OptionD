@@ -10,9 +10,11 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 - Intégration du handoff de design (`docs/design_handoff_optiond/`) comme source de vérité visuelle.
 - Site Next.js (App Router + TypeScript) : portage pixel-perfect des 3 pages du handoff (`/`, `/site-internet`, `/agent-ia`), `globals.css` = `styles.css` verbatim, 24 composants, particules canvas et thème dark/light portés verbatim depuis `app.js`, polices Geist via `next/font`, anti-FOUC, favicon + OG. Build `next build` vert.
 - Menu mobile (hamburger) accessible sous 1180px : panneau avec les 3 liens + CTA + statut, gestion clavier (Escape, piège de focus), `aria-expanded`/`aria-modal`, verrou de scroll, animations désactivées sous `prefers-reduced-motion`.
+- SEO : données structurées JSON-LD (`ProfessionalService` + founder, `WebPage`, `Service` ×2 avec `Offer`, `FAQPage` ×2), `sitemap.xml` (`app/sitemap.ts`), `robots.txt` (`app/robots.ts`), métadonnées par page (title/description/canonical/OpenGraph/Twitter) optimisées national FR, composant `JsonLd`. Recherche concurrence + mots-clés et stratégie dans `docs/seo/STRATEGY.md`.
 
 ### Changed
 - Déplacement du handoff design `design_handoff_optiond/` → `docs/design_handoff_optiond/`.
+- SEO on-page : intégration naturelle de mots-clés (national FR) dans les eyebrows, titres de sections et accroches des 3 pages, sans réécriture lourde (réécritures plus poussées listées en recommandations dans `docs/seo/STRATEGY.md`).
 - Liens LinkedIn et GitHub réels dans le footer (ouverture en nouvel onglet, `rel="noopener noreferrer"`).
 - Localisation de la marque affichée en « Haute-Savoie » (au lieu de « Annecy ») : titre accueil, eyebrows accueil/site internet, footer. Les exemples clients fictifs (Annecy) sont conservés.
 - Grosse passe responsive sur les 3 pages (breakpoints fins 560/480/360px, zéro débordement horizontal de 320 à 1440px, tap targets ≥ 40px, code window et case-tabs scrollables, reflow diag-card/strip/cta-band/footer).
