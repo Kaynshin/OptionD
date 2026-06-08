@@ -5,6 +5,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ## [Unreleased]
 
 ### Added
+- Intégration Vercel Analytics (`@vercel/analytics` v2.0.1) dans le layout racine — collecte automatique des pages vues sur les déploiements Vercel.
 - Bootstrap du dépôt : structure `docs/`, README, `.gitignore` Next.js.
 - Intégration du handoff de design (`docs/design_handoff_optiond/`) comme source de vérité visuelle.
 - Site Next.js (App Router + TypeScript) : portage pixel-perfect des 3 pages du handoff (`/`, `/site-internet`, `/agent-ia`), `globals.css` = `styles.css` verbatim, 24 composants, particules canvas et thème dark/light portés verbatim depuis `app.js`, polices Geist via `next/font`, anti-FOUC, favicon + OG. Build `next build` vert.
