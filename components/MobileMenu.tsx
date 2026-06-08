@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 type MobileMenuProps = {
   active: 'home' | 'site' | 'agent';
-  statusText: ReactNode;
   ctaLabel: ReactNode;
   ctaHref: string;
 };
@@ -19,7 +18,6 @@ const LINKS: { href: string; label: string; key: MobileMenuProps['active'] }[] =
 
 export default function MobileMenu({
   active,
-  statusText,
   ctaLabel,
   ctaHref,
 }: MobileMenuProps) {
@@ -144,10 +142,6 @@ export default function MobileMenu({
               {ctaLabel} <span className="arrow">→</span>
             </a>
           )}
-          <span className="mobile-status">
-            <span className="pulse" aria-hidden="true"></span>
-            {statusText}
-          </span>
         </div>
       </div>
     </div>
