@@ -11,10 +11,12 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 
 ### Changed
 - Déplacement du handoff design `design_handoff_optiond/` → `docs/design_handoff_optiond/`.
+- Liens LinkedIn et GitHub réels dans le footer (ouverture en nouvel onglet, `rel="noopener noreferrer"`).
 
 ### Fixed
 
 ### Removed
+- Numéro de téléphone placeholder (`06 00 00 00 00`) retiré du site (footer, CTA site internet, coordonnées agent IA).
 
 ### Deprecated
 
