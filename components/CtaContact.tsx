@@ -10,7 +10,7 @@ export default function CtaContact() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     window.location.href =
-      'mailto:david@optiond.fr?subject=Diagnostic%20-%20' +
+      'mailto:contact@optiond.fr?subject=Diagnostic%20-%20' +
       encodeURIComponent(url) +
       '&body=' +
       encodeURIComponent(
@@ -33,8 +33,8 @@ export default function CtaContact() {
               engagement.
             </p>
             <div className="cta-row">
-              <Button href="mailto:david@optiond.fr" variant="on-mag" size="lg" arrow="→">
-                david@optiond.fr
+              <Button href="mailto:contact@optiond.fr" variant="on-mag" size="lg" arrow="→">
+                contact@optiond.fr
               </Button>
             </div>
           </div>

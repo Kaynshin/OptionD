@@ -15,7 +15,7 @@ const organizationJsonLd = {
   name: 'Option/D',
   alternateName: 'Option D',
   url: 'https://optiond.fr',
-  email: 'david@optiond.fr',
+  email: 'contact@optiond.fr',
   image: 'https://optiond.fr/og-image.png',
   logo: 'https://optiond.fr/favicon.svg',
   description:

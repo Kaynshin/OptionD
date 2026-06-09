@@ -54,4 +54,4 @@ Les prototypes sont **figés et validés**. La mission n'est pas de redessiner m
 - Stack visée : **Next.js (App Router, 3 routes) + TypeScript**, polices **Geist / Geist Mono**, déploiement **Vercel**, cible **Lighthouse ≥ 95 mobile**. Détails dans `PROMPT.md`.
 - Le wordmark `Option/D` est rendu **en HTML/CSS live** (pas en image) — à conserver. Les SVG/PNG servent au favicon, à l'OG image et aux app-icons.
 - Le **CSS et le JS sont déjà externalisés** (`styles.css`, `app.js`) : c'est le design system partagé — à porter tel quel dans `globals.css` + hooks.
-- Données à confirmer : les cas clients exemples (site internet) et les coordonnées de la page Agent IA (mises par défaut : David Jomain · 06 00 00 00 00 · david@optiond.fr).
+- Données à confirmer : les cas clients exemples (site internet) et les coordonnées de la page Agent IA (mises par défaut : David Jomain · 06 00 00 00 00 · contact@optiond.fr).

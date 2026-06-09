@@ -57,7 +57,7 @@ export default function Accueil() {
         active="home"
         statusText="Disponible · 2026"
         ctaLabel="Me contacter"
-        ctaHref="mailto:david@optiond.fr"
+        ctaHref="mailto:contact@optiond.fr"
       />
 
       <Hero
