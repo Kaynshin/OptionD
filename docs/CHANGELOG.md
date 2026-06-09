@@ -16,6 +16,11 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 
 ### Security
 
+## [1.0.2] - 2026-06-09
+
+### Changed
+- Adresse e-mail de contact remplacée partout par `contact@optiond.fr` (anciennement `david@optiond.fr`) : code du site (`app/`, `components/`) et documentation (handoff design, SEO, stratégie).
+
 ## [1.0.1] - 2026-06-08
 
 ### Changed

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function MentionsLegales() {
   return (
     <main data-screen-label="Mentions légales — Option/D">
-      <Nav ctaLabel="Me contacter" ctaHref="mailto:david@optiond.fr" />
+      <Nav ctaLabel="Me contacter" ctaHref="mailto:contact@optiond.fr" />
 
       <section className="band">
         <div className="container">
@@ -47,7 +47,7 @@ export default function MentionsLegales() {
             </p>
             <ul>
               <li>
-                Email : <a href="mailto:david@optiond.fr">david@optiond.fr</a>
+                Email : <a href="mailto:contact@optiond.fr">contact@optiond.fr</a>
               </li>
               <li>
                 SIRET : 750 186 181 00038
@@ -117,7 +117,7 @@ export default function MentionsLegales() {
               Vous disposez d&apos;un droit d&apos;accès, de rectification, de suppression, de
               limitation, d&apos;opposition et de portabilité de vos données. Pour exercer ces droits,
               contactez le délégué à la protection des données (DPO) à l&apos;adresse{' '}
-              <a href="mailto:david@optiond.fr">david@optiond.fr</a>. Vous pouvez également introduire
+              <a href="mailto:contact@optiond.fr">contact@optiond.fr</a>. Vous pouvez également introduire
               une réclamation auprès de la CNIL (
               <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">
                 cnil.fr
@@ -146,7 +146,7 @@ export default function MentionsLegales() {
             <h2>Contact</h2>
             <p>
               Pour toute question relative à ces mentions légales ou au site, vous pouvez écrire à{' '}
-              <a href="mailto:david@optiond.fr">david@optiond.fr</a>.
+              <a href="mailto:contact@optiond.fr">contact@optiond.fr</a>.
             </p>
           </article>
         </div>

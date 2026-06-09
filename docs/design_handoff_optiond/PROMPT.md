@@ -343,7 +343,7 @@ Reprends exactement ces media queries (présentes dans `references/site/index.ht
 
 ## 13. Contenu textuel & données (rappel)
 
-Toute la copie des 3 pages est **figée dans les fichiers `references/site/*.html`** — reprends-la mot pour mot, ponctuation et accents compris (`Option/D`, `— DAVID · DIGITAL · DESIGN —`, « 2 500 », « 890 €/mois », « Lighthouse ≥ 95 », etc.). Les données « exemple » (Domaine Gagnaud, Atelier B. Roussin, Marina Ferraz, DIAG-2026-0418…) et les **coordonnées** de la page Agent IA (David Jomain · 06 00 00 00 00 · david@optiond.fr) sont du contenu à confirmer : garde-les tant que l'utilisateur ne fournit pas les vraies valeurs.
+Toute la copie des 3 pages est **figée dans les fichiers `references/site/*.html`** — reprends-la mot pour mot, ponctuation et accents compris (`Option/D`, `— DAVID · DIGITAL · DESIGN —`, « 2 500 », « 890 €/mois », « Lighthouse ≥ 95 », etc.). Les données « exemple » (Domaine Gagnaud, Atelier B. Roussin, Marina Ferraz, DIAG-2026-0418…) et les **coordonnées** de la page Agent IA (David Jomain · 06 00 00 00 00 · contact@optiond.fr) sont du contenu à confirmer : garde-les tant que l'utilisateur ne fournit pas les vraies valeurs.
 
 ---
 
