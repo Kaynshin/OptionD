@@ -31,7 +31,7 @@ function FootLink({ label, href, ext }: FooterLink) {
 const CONTACT_COLUMN: FooterColumn = {
   title: 'Contact',
   links: [
-    { label: 'david@optiond.fr', href: 'mailto:david@optiond.fr' },
+    { label: 'contact@optiond.fr', href: 'mailto:contact@optiond.fr' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/davidjomain/', ext: true },
     { label: 'GitHub', href: 'https://github.com/Kaynshin', ext: true },
   ],

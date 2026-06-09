@@ -593,14 +593,14 @@ export default function AgentIaPage() {
                 franchement.
               </p>
               <div className="cta-row" style={{ justifyContent: 'center' }}>
-                <a href="mailto:david@optiond.fr" className="btn btn-on-mag btn-lg">
+                <a href="mailto:contact@optiond.fr" className="btn btn-on-mag btn-lg">
                   Réserver 20 minutes <span className="arrow">→</span>
                 </a>
               </div>
               <div className="cta-coords" style={{ justifyContent: 'center' }}>
                 <span>David</span>
                 <span className="sepd">·</span>
-                <span>david@optiond.fr</span>
+                <span>contact@optiond.fr</span>
               </div>
             </div>
           </div>

@@ -19,4 +19,4 @@ Mettre en ligne le site **Option/D** : un site vitrine présentant 2 services (S
 ## Données à confirmer
 
 - Cas clients exemples (page Site internet).
-- Coordonnées page Agent IA (défaut : David Jomain · 06 00 00 00 00 · david@optiond.fr).
+- Coordonnées page Agent IA (défaut : David Jomain · 06 00 00 00 00 · contact@optiond.fr).
