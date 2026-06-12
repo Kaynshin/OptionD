@@ -5,8 +5,10 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ## [Unreleased]
 
 ### Added
+- Page d'attente « site en construction » sur la home : plein écran dans le thème (wordmark animé, particules, halo magenta), eyebrow mono « Site en construction », barre de build façon terminal avec curseur clignotant, lien `contact@optiond.fr` et micro-footer (© + mentions légales). Zéro information commerciale (offres en cours de refonte).
 
 ### Changed
+- Pages `/site-internet` et `/agent-ia` masquées temporairement : redirection 307 vers `/` (fichiers conservés, réversible). Sitemap réduit à `/` et `/mentions-legales`.
 
 ### Fixed
 
