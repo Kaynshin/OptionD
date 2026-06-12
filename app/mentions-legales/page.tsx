@@ -154,7 +154,6 @@ export default function MentionsLegales() {
 
       <Footer
         brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David, Haute-Savoie."
-        bottomStatus="Disponible · 2026"
         columns={[
           {
             title: 'Services',

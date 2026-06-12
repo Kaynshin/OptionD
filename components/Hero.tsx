@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import HeroParticles from './HeroParticles';
+import HeroParticlesLazy from './HeroParticlesLazy';
 import Wordmark from './Wordmark';
 
 type HeroProps = {
@@ -23,7 +23,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section className="hero" aria-label={ariaLabel}>
-      <HeroParticles />
+      <HeroParticlesLazy />
       <div className="hero-inner">
         <div className="hero-eyebrow">{eyebrow}</div>
         {lockup && (

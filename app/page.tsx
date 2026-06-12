@@ -55,7 +55,6 @@ export default function Accueil() {
       <JsonLd data={webPageJsonLd} />
       <Nav
         active="home"
-        statusText="Disponible · 2026"
         ctaLabel="Me contacter"
         ctaHref="mailto:contact@optiond.fr"
       />
@@ -277,7 +276,6 @@ export default function Accueil() {
 
       <Footer
         brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David, Haute-Savoie."
-        bottomStatus="Disponible · 2026"
         columns={[
           {
             title: 'Services',

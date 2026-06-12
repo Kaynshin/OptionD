@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 type ButtonProps = {
   href: string;
-  variant: 'primary' | 'sec' | 'ghost' | 'on-mag' | 'on-mag-out';
+  variant: 'primary' | 'sec' | 'on-mag';
   size?: 'lg';
   arrow?: '→' | '↗';
   children: ReactNode;
