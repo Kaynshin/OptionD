@@ -30,6 +30,9 @@ export default function MobileMenu({
   const panelId = useId();
 
   const close = useCallback(() => setOpen(false), []);
+  // Évite de voler le focus au chargement : on ne re-focus le burger
+  // qu'après une vraie ouverture/fermeture du panneau.
+  const hasOpenedRef = useRef(false);
 
   // Lock body scroll while the panel is open, then restore it.
   useEffect(() => {
@@ -45,11 +48,12 @@ export default function MobileMenu({
   // Focus management: focus first link on open, return focus to the burger on close.
   useEffect(() => {
     if (open) {
+      hasOpenedRef.current = true;
       // Defer to allow the panel to mount/transition in.
       const id = window.requestAnimationFrame(() => firstLinkRef.current?.focus());
       return () => window.cancelAnimationFrame(id);
     }
-    burgerRef.current?.focus();
+    if (hasOpenedRef.current) burgerRef.current?.focus();
   }, [open]);
 
   // Close on Escape; trap Tab focus inside the panel.

@@ -2,7 +2,9 @@ import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://optiond.fr';
-  const lastModified = new Date();
+  // Date statique : `new Date()` changeait lastModified à chaque build,
+  // ce qui invalide le cache des crawlers sans raison.
+  const lastModified = '2026-06-12';
 
   // Mode « site en construction » : seules la home et les mentions légales
   // sont exposées (les pages commerciales redirigent vers /).

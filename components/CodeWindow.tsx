@@ -1,21 +1,3 @@
-const PRE_HTML =
-  '<span class="ln">01</span><span class="com">// Option/D — orchestrateur agent + arbitrage humain</span>\n' +
-  '<span class="ln">02</span><span class="kw">import</span> <span class="var">{ Hero, FindUs, Cellar }</span> <span class="kw">from</span> <span class="str">"@/components"</span>\n' +
-  '<span class="ln">03</span><span class="kw">import</span> <span class="var">{ trackVitals }</span> <span class="kw">from</span> <span class="str">"@/lib/vitals"</span>\n' +
-  '<span class="ln">04</span>\n' +
-  '<span class="ln">05</span><span class="kw">export default function</span> <span class="fn">Page</span>() {\n' +
-  '<span class="ln">06</span>  <span class="fn">trackVitals</span>({ <span class="var">target</span>: <span class="str">"lighthouse-95"</span> })\n' +
-  '<span class="ln">07</span>  <span class="kw">return</span> (\n' +
-  '<span class="ln">08</span>    &lt;<span class="fn">main</span>&gt;\n' +
-  '<span class="ln">09</span>      &lt;<span class="fn">Hero</span>\n' +
-  '<span class="ln">10</span>        <span class="var">title</span>=<span class="str">"Le vin d\'Annecy, à la source."</span>\n' +
-  '<span class="ln">11</span>        <span class="var">cta</span>=<span class="str">"Commander un coffret"</span> /&gt;\n' +
-  '<span class="ln">12</span>      &lt;<span class="fn">FindUs</span> <span class="var">city</span>=<span class="str">"Annecy"</span> <span class="var">map</span>={<span class="kw">true</span>} /&gt;\n' +
-  '<span class="ln">13</span>      &lt;<span class="fn">Cellar</span> <span class="var">items</span>={<span class="num">87</span>} <span class="var">live</span>={<span class="kw">true</span>} /&gt;\n' +
-  '<span class="ln">14</span>    &lt;/<span class="fn">main</span>&gt;\n' +
-  '<span class="ln">15</span>  )\n' +
-  '<span class="ln">16</span>}';
-
 export default function CodeWindow() {
   return (
     <div className="codewin" aria-label="Build live · domaine-gagnaud">
@@ -26,7 +8,100 @@ export default function CodeWindow() {
         <span className="file">~/clients/domaine-gagnaud/app/page.tsx</span>
         <span className="branch">main · build #042</span>
       </div>
-      <pre dangerouslySetInnerHTML={{ __html: PRE_HTML }} />
+      <pre>
+        <span className="ln">01</span>
+        <span className="com">{'// Option/D — orchestrateur agent + arbitrage humain'}</span>
+        {'\n'}
+        <span className="ln">02</span>
+        <span className="kw">import</span>
+        {' '}
+        <span className="var">{'{ Hero, FindUs, Cellar }'}</span>
+        {' '}
+        <span className="kw">from</span>
+        {' '}
+        <span className="str">{'"@/components"'}</span>
+        {'\n'}
+        <span className="ln">03</span>
+        <span className="kw">import</span>
+        {' '}
+        <span className="var">{'{ trackVitals }'}</span>
+        {' '}
+        <span className="kw">from</span>
+        {' '}
+        <span className="str">{'"@/lib/vitals"'}</span>
+        {'\n'}
+        <span className="ln">04</span>
+        {'\n'}
+        <span className="ln">05</span>
+        <span className="kw">export default function</span>
+        {' '}
+        <span className="fn">Page</span>
+        {'() {\n'}
+        <span className="ln">06</span>
+        {'  '}
+        <span className="fn">trackVitals</span>
+        {'({ '}
+        <span className="var">target</span>
+        {': '}
+        <span className="str">{'"lighthouse-95"'}</span>
+        {' })\n'}
+        <span className="ln">07</span>
+        {'  '}
+        <span className="kw">return</span>
+        {' (\n'}
+        <span className="ln">08</span>
+        {'    <'}
+        <span className="fn">main</span>
+        {'>\n'}
+        <span className="ln">09</span>
+        {'      <'}
+        <span className="fn">Hero</span>
+        {'\n'}
+        <span className="ln">10</span>
+        {'        '}
+        <span className="var">title</span>
+        {'='}
+        <span className="str">{'"Le vin d\'Annecy, à la source."'}</span>
+        {'\n'}
+        <span className="ln">11</span>
+        {'        '}
+        <span className="var">cta</span>
+        {'='}
+        <span className="str">{'"Commander un coffret"'}</span>
+        {' />\n'}
+        <span className="ln">12</span>
+        {'      <'}
+        <span className="fn">FindUs</span>
+        {' '}
+        <span className="var">city</span>
+        {'='}
+        <span className="str">{'"Annecy"'}</span>
+        {' '}
+        <span className="var">map</span>
+        {'={'}
+        <span className="kw">true</span>
+        {'} />\n'}
+        <span className="ln">13</span>
+        {'      <'}
+        <span className="fn">Cellar</span>
+        {' '}
+        <span className="var">items</span>
+        {'={'}
+        <span className="num">87</span>
+        {'} '}
+        <span className="var">live</span>
+        {'={'}
+        <span className="kw">true</span>
+        {'} />\n'}
+        <span className="ln">14</span>
+        {'    </'}
+        <span className="fn">main</span>
+        {'>\n'}
+        <span className="ln">15</span>
+        {'  )\n'}
+        <span className="ln">16</span>
+        {'}'}
+      </pre>
       <div className="status">
         <span className="live">DEPLOY · domaine-gagnaud.fr</span>
         <span>
