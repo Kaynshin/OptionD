@@ -5,6 +5,20 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+### Removed
+
+### Deprecated
+
+### Security
+
+## [1.1.0] - 2026-06-12
+
+### Added
 - Page d'attente « site en construction » sur la home : plein écran dans le thème (wordmark animé, particules, halo magenta), eyebrow mono « Site en construction », barre de build façon terminal avec curseur clignotant, lien `contact@optiond.fr` et micro-footer (© + mentions légales). Zéro information commerciale (offres en cours de refonte).
 
 ### Changed
