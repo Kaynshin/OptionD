@@ -997,3 +997,116 @@
     .back-to-top.is-visible{transform:none}
   }
 
+  /* ---------- COMING SOON ---------- */
+  /* La page d'attente réutilise .hero (halo + grid + particles) :
+     .cs-page se contente de l'étirer plein viewport et de centrer. */
+  .cs-page{
+    min-height:100dvh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:48px 24px 28px;
+    text-align:center;
+  }
+  .cs-inner{
+    position:relative;z-index:2;
+    flex:1;width:100%;max-width:720px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .cs-page .hero-lock.cs-lock{margin-bottom:40px}
+
+  .cs-eyebrow{
+    display:flex;align-items:center;gap:10px;justify-content:center;
+    font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--fg-muted);margin:0 0 26px;
+  }
+  .cs-eyebrow .cs-dot{
+    flex:none;width:6px;height:6px;border-radius:50%;
+    background:var(--primary);box-shadow:0 0 10px var(--primary);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+
+  .cs-title{
+    font-family:var(--sans);font-weight:700;
+    font-size:clamp(28px,5.4vw,48px);
+    line-height:1.1;letter-spacing:-0.03em;
+    margin:0;max-width:18ch;text-wrap:balance;
+  }
+  .cs-sub{
+    margin:18px auto 0;max-width:46ch;
+    font-size:17px;line-height:1.6;color:var(--fg-body);
+    text-wrap:pretty;
+  }
+
+  /* touche signature : ligne de build façon terminal (mono, segments magenta) */
+  .cs-term{
+    margin-top:44px;
+    display:flex;align-items:center;gap:14px;
+    font-family:var(--mono);font-size:12px;letter-spacing:0.08em;
+    color:var(--fg-muted);
+  }
+  .cs-bar{
+    position:relative;flex:none;
+    width:min(220px,42vw);height:10px;
+    overflow:hidden;
+  }
+  .cs-bar::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg, var(--hairline) 0 12px, transparent 12px 16px);
+  }
+  .cs-bar-fill{
+    position:absolute;inset:0 auto 0 0;width:88%;
+    background:repeating-linear-gradient(90deg, var(--primary) 0 12px, transparent 12px 16px);
+    animation:csBuild 7s steps(14,end) infinite;
+  }
+  @keyframes csBuild{
+    0%        {width:0}
+    55%       {width:88%}
+    70%, 100% {width:88%}
+  }
+  .cs-caret{
+    flex:none;width:7px;height:14px;
+    background:var(--primary-fg);
+    animation:csBlink 1.1s steps(2,end) infinite;
+  }
+  @keyframes csBlink{50%{opacity:0}}
+
+  .cs-mail{
+    display:inline-block;margin-top:40px;
+    font-family:var(--mono);font-size:13px;letter-spacing:0.06em;
+    color:var(--fg-body);
+    text-decoration:underline;text-underline-offset:4px;
+    text-decoration-color:var(--hairline-strong);
+    transition:color .15s ease, text-decoration-color .15s ease;
+  }
+  .cs-mail:hover{color:var(--fg);text-decoration-color:var(--primary-fg)}
+  .cs-mail:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:2px}
+
+  .cs-foot{
+    position:relative;z-index:2;
+    width:100%;max-width:720px;
+    margin-top:48px;padding-top:24px;
+    border-top:1px solid var(--hairline);
+    display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--fg-muted);
+  }
+  .cs-foot .cs-sep{color:var(--fg-soft)}
+  .cs-foot a{color:var(--fg-muted);transition:color .15s ease}
+  .cs-foot a:hover{color:var(--fg)}
+  .cs-foot a:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:2px}
+
+  @media (max-width:480px){
+    .cs-page{padding:36px 16px 20px}
+    .cs-page .hero-lock.cs-lock{margin-bottom:32px}
+    .cs-sub{font-size:15.5px}
+    .cs-term{margin-top:36px;gap:10px}
+    .cs-bar{width:min(160px,44vw)}
+    .cs-foot{margin-top:36px}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .cs-eyebrow .cs-dot,
+    .cs-bar-fill,
+    .cs-caret{animation:none}
+  }
+

@@ -5,8 +5,10 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 ## [Unreleased]
 
 ### Added
+- Page d'attente « site en construction » sur la home : plein écran dans le thème (wordmark animé, particules, halo magenta), eyebrow mono « Site en construction », barre de build façon terminal avec curseur clignotant, lien `contact@optiond.fr` et micro-footer (© + mentions légales). Zéro information commerciale (offres en cours de refonte).
 
 ### Changed
+- Pages `/site-internet` et `/agent-ia` masquées temporairement : redirection 307 vers `/` (fichiers conservés, réversible). Sitemap réduit à `/` et `/mentions-legales`.
 - Performance : animation des particules du hero optimisée (cap mobile à 35 particules, tracé des liens batché par buckets d'opacité, couleurs précalculées, resize débouncé, listeners souris limités aux appareils avec pointeur) et chargée en différé via `next/dynamic`.
 - Performance : le glow animé du wordmark (filter/text-shadow) est pré-rendu sur des pseudo-éléments dont seule l'opacité est animée — plus de repaints continus dans le hero.
 - Performance : `DiagnosticCard` et `CtaContact` convertis en Server Components (îles client minimales `RevealOnView` et `DiagnosticForm`) — moins de JavaScript hydraté.
