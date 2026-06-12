@@ -130,7 +130,6 @@ export default function AgentIaPage() {
       <JsonLd data={[serviceJsonLd, faqJsonLd]} />
       <Nav
         active="agent"
-        statusText="Réponse sous 24 h"
         ctaLabel="Réserver 20 min"
         ctaHref="#contact"
       />
@@ -610,7 +609,6 @@ export default function AgentIaPage() {
       {/* ============== FOOTER ============== */}
       <Footer
         brandText="Sites internet premium et agents IA pour commerces et indépendants. Un seul interlocuteur : David, Haute-Savoie."
-        bottomStatus="Disponible · échange sous 24 h"
         columns={[
           {
             title: 'Agent IA',
