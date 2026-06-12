@@ -114,7 +114,6 @@ export default function SiteInternetPage() {
 
       <Nav
         active="site"
-        statusText="2 créneaux mai"
         ctaLabel="Demander un diagnostic"
         ctaHref="#contact"
       />
@@ -204,7 +203,6 @@ export default function SiteInternetPage() {
 
       <Footer
         brandText="Atelier freelance IA-augmenté. Sites vitrines et landing pages haut de gamme livrés en environ une semaine. David, Haute-Savoie."
-        bottomStatus="Disponible · 2 créneaux mai 2026"
         columns={[
           {
             title: 'Atelier',

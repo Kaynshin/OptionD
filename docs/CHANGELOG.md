@@ -16,6 +16,32 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Versionnage :
 
 ### Security
 
+## [1.1.0] - 2026-06-12
+
+### Added
+- Page d'attente « site en construction » sur la home : plein écran dans le thème (wordmark animé, particules, halo magenta), eyebrow mono « Site en construction », barre de build façon terminal avec curseur clignotant, lien `contact@optiond.fr` et micro-footer (© + mentions légales). Zéro information commerciale (offres en cours de refonte).
+
+### Changed
+- Pages `/site-internet` et `/agent-ia` masquées temporairement : redirection 307 vers `/` (fichiers conservés, réversible). Sitemap réduit à `/` et `/mentions-legales`.
+- Performance : animation des particules du hero optimisée (cap mobile à 35 particules, tracé des liens batché par buckets d'opacité, couleurs précalculées, resize débouncé, listeners souris limités aux appareils avec pointeur) et chargée en différé via `next/dynamic`.
+- Performance : le glow animé du wordmark (filter/text-shadow) est pré-rendu sur des pseudo-éléments dont seule l'opacité est animée — plus de repaints continus dans le hero.
+- Performance : `DiagnosticCard` et `CtaContact` convertis en Server Components (îles client minimales `RevealOnView` et `DiagnosticForm`) — moins de JavaScript hydraté.
+- Sitemap : dates `lastModified` statiques au lieu de la date de build.
+
+### Fixed
+- Le menu mobile ne vole plus le focus au chargement de la page.
+
+### Removed
+- Code mort : composant `Cases` (jamais importé), thème light CSS inutilisé, variants de bouton `ghost`/`on-mag-out`, props `statusText`/`bottomStatus`, ~4 KB de CSS orphelin ; media queries dupliquées fusionnées.
+
+### Deprecated
+
+### Security
+- Headers de sécurité ajoutés sur toutes les routes : Content-Security-Policy (compatible Vercel Analytics/Speed Insights), `X-Frame-Options: DENY` (anti-clickjacking), `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Permissions-Policy` ; `X-Powered-By` désactivé.
+- Migration Next.js 14 (EOL, advisories DoS sans patch) → Next.js 15.5.19 + React 19.2.7 ; `npm audit` production sans advisory high.
+- JSON-LD : échappement de `<` dans `JSON.stringify` (défense en profondeur contre l'injection `</script>`).
+- `CodeWindow` : `dangerouslySetInnerHTML` statique remplacé par du JSX pur.
+
 ## [1.0.2] - 2026-06-09
 
 ### Changed

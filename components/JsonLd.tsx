@@ -17,8 +17,12 @@ export default function JsonLd({ data }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
+      // Échappe `<` pour empêcher l'injection `</script>` dans le JSON-LD
+      // (pattern recommandé par la doc Next.js).
       // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, '\\u003c'),
+      }}
     />
   );
 }

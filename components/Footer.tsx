@@ -7,8 +7,6 @@ type FooterColumn = { title: string; links: FooterLink[] };
 
 type FooterProps = {
   brandText: ReactNode;
-  /** Conservé pour compat. d'API (les pages le passent encore) — non rendu. */
-  bottomStatus?: ReactNode;
   columns: FooterColumn[];
 };
 

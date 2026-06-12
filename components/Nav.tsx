@@ -9,8 +9,6 @@ export type NavActive = 'home' | 'site' | 'agent';
 type NavProps = {
   /** Lien à mettre en surbrillance. Omis (ou non reconnu) → aucun lien actif (ex. /mentions-legales). */
   active?: NavActive;
-  /** Conservé pour compat. d'API (les pages le passent encore) — non rendu. */
-  statusText?: ReactNode;
   ctaLabel: ReactNode;
   ctaHref: string;
 };
